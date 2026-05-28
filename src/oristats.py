@@ -1,6 +1,3 @@
-"""
-记得 git push
-"""
 import math
 
 
@@ -107,17 +104,14 @@ def rsd_col(*args):
 
 
 def deg2rad(deg: list) -> list:
-    """Convert degrees to radians element-wise. Non-numeric inputs yield 0."""
     return [math.radians(v) if isinstance(v, (int, float)) else 0.0 for v in deg]
 
 
 def rad2deg(rad: list) -> list:
-    """Convert radians to degrees element-wise. Non-numeric inputs yield 0."""
     return [math.degrees(v) if isinstance(v, (int, float)) else 0.0 for v in rad]
 
 
 def sem_col(*args):
-    """Standard error of the mean (SD / sqrt(n)) computed row-wise across multiple columns."""
     max_len = max(len(lst) for lst in args)
     result = []
     for i in range(max_len):
@@ -146,7 +140,6 @@ def sem_col(*args):
 
 
 def zscore_col(vals):
-    """Z-score standardization of a single column. Subtracts column mean and divides by standard deviation."""
     fvals = []
     for v in vals:
         try:
@@ -176,7 +169,6 @@ def zscore_col(vals):
 
 
 def mad_col(*args):
-    """Median absolute deviation computed row-wise across multiple columns. A robust alternative to standard deviation."""
     max_len = max(len(lst) for lst in args)
     result = []
     for i in range(max_len):
@@ -213,7 +205,6 @@ def mad_col(*args):
 
 
 def iqr_col(*args):
-    """Interquartile range (Q3 - Q1) computed row-wise across multiple columns. Requires at least 4 valid values per row."""
     max_len = max(len(lst) for lst in args)
     result = []
 
@@ -247,7 +238,6 @@ def iqr_col(*args):
 
 
 def trimmean_col(*args, percent=20):
-    """Trimmed (truncated) mean row-wise across columns. Removes the smallest and largest (percent/2)% before averaging."""
     max_len = max(len(lst) for lst in args)
     result = []
     for i in range(max_len):
@@ -276,7 +266,6 @@ def trimmean_col(*args, percent=20):
 
 
 def geomean_col(*args):
-    """Geometric mean computed row-wise across multiple columns. Returns 0 if any value is non-positive."""
     max_len = max(len(lst) for lst in args)
     result = []
     for i in range(max_len):
@@ -303,7 +292,6 @@ def geomean_col(*args):
 
 
 def harmean_col(*args):
-    """Harmonic mean computed row-wise across multiple columns. Returns 0 if any value is non-positive."""
     max_len = max(len(lst) for lst in args)
     result = []
     for i in range(max_len):
