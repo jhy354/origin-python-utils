@@ -5,7 +5,6 @@ import math
 
 
 def avg_col(*args: list) -> list:
-    """Row-wise arithmetic mean across multiple columns. Ignores non-numeric values."""
     max_len = max(len(lst) for lst in args)
     avg_result = []
 
@@ -33,7 +32,6 @@ def avg_col(*args: list) -> list:
 
 
 def sd_col(*args):
-    """Row-wise sample standard deviation (ddof=1) across multiple columns."""
     max_len = max(len(lst) for lst in args)
     result = []
 
@@ -70,7 +68,6 @@ def sd_col(*args):
 
 
 def rsd_col(*args):
-    """Row-wise relative standard deviation (RSD, %) across multiple columns. Also known as coefficient of variation percentage."""
     max_len = max(len(lst) for lst in args)
     result = []
 
