@@ -1,6 +1,6 @@
 # Origin Python Utils
 
-基于 [OriginLab](https://www.originlab.com/) 的 Python 自定义函数库，专用于**设置列值（Set Column Values）**和 LabTalk 脚本调用。
+基于 [OriginLab](https://www.originlab.com/) 的 Python 自定义函数库，专用于**设置列值**（Set Column Values）和 LabTalk 脚本调用。
 
 ---
 
@@ -46,7 +46,7 @@
 
 ### 方法一：复制到 labtalk.py（最简）
 
-Origin 默认从**用户文件文件夹（UFF）**下的 `labtalk.py` 加载 Python 函数。
+Origin 默认从**用户文件文件夹**（UFF）下的 `labtalk.py` 加载 Python 函数。
 
 1. 菜单 **Connectivity > Open Default Python Functions...**
 2. 将 `src/oristats.py` 中所需函数复制到 `labtalk.py`
@@ -85,10 +85,10 @@ col(B) = py.avg_col(col(C), col(D), col(E));
 
 为避免 ERR0015110 错误，所有函数遵循以下规范：
 
-- 返回**纯 Python `float` 列表**（Origin 的 C 接口拒绝 `int`、`numpy.float64` 等类型）
-- 使用 **`try: val = float(val)`** 而非 `isinstance()`，以兼容 Origin 列中的 `numpy.float64` 等类型
+- 返回**纯 Python float 列表**（Origin 的 C 接口拒绝 `int`、`numpy.float64` 等类型）
+- 使用 `try: val = float(val)` 而非 `isinstance()`，以兼容 Origin 列中的 `numpy.float64` 等类型
 - 避免**生成器表达式**（`sum(x for x in vals)`），改用显式 `for` 循环
-- 避免在可能为负的值上使用 **`math.sqrt()`**，改用 `** 0.5`
+- 避免在可能为负的值上使用 `math.sqrt()`，改用 `** 0.5`
 - 所有返回值均显式 `float()` 转换
 
 ## 故障排查
