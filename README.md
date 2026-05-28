@@ -42,8 +42,8 @@ col(G) = py.rsd_col(col(C), col(D), col(E));
 Place `oristats.py` in your **User Files Folder (UFF)**. Call functions with the filename prefix:
 
 ```labtalk
-col(B) = py.myfunc.avg_col(col(C), col(D), col(E));
-col(F) = py.myfunc.sd_col(col(C), col(D), col(E));
+col(B) = py.oristats.avg_col(col(C), col(D), col(E));
+col(F) = py.oristats.sd_col(col(C), col(D), col(E));
 ```
 
 Origin searches for `.py` files in the UFF by default.
@@ -76,9 +76,9 @@ All functions are written with Origin's strict type requirements in mind:
 
 ## Troubleshooting
 
-If Origin reports error **ERR0015110** ("调用的 Python 函数没有返回可以转换为双精度值的值"), see [`origin-python-ERR0015110.md`](./origin-python-ERR0015110.md) for a detailed diagnosis and fix checklist.
+If Origin reports error **ERR0015110** ("调用的 Python 函数没有返回可以转换为双精度值的值"), see [`docs/origin-python-ERR0015110.md`](./docs/origin-python-ERR0015110.md) for a detailed diagnosis and fix checklist.
 
 ## Files
 
-- `oristats.py` — Function definitions
-- `origin-python-ERR0015110.md` — ERR0015110 error troubleshooting guide (Chinese)
+- `src/oristats.py` — Function definitions
+- `docs/origin-python-ERR0015110.md` — ERR0015110 error troubleshooting guide (Chinese)
